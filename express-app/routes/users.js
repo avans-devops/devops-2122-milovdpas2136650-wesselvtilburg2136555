@@ -13,6 +13,7 @@ router.route('/').get((req, res) => {
                             message: 'Error fetching users!'
                         });
                     } else {
+                        console.log(result);
                         res.json(result);
                     }
                 });
