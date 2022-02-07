@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 // Connection URI
-const uri = "mongodb://localhost:27017";
+const uri = process.env.MONGO_URL || "mongodb://localhost:27017";
 
 const client = new MongoClient(uri, {
     useNewUrlParser: true,
@@ -20,7 +20,7 @@ module.exports = {
                         reject(err);
                     }
 
-                    dbConnection = db.db("myapp");
+                    dbConnection = db.db(process.env.DB_NAME || "databasename");
                     console.log("Successfully connected to MongoDB.");
 
                     resolve(dbConnection);
