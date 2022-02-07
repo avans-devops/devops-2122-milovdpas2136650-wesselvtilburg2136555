@@ -1,7 +1,7 @@
 name: CI-API workflow
 on:
   push:
-    branches:
+    path:
       - 'api/**'
   pull_request:
     branches:
@@ -12,7 +12,6 @@ defaults:
 jobs:
   coverage:
     runs-on: ubuntu-latest
-
     steps:
       - name: Jest coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2.0.3
