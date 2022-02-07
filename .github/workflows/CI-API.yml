@@ -1,20 +1,20 @@
 name: CI-API workflow
-  on:
-    push:
-      branches:
-        - 'api/**'
-    pull_request:
-      branches:
-        - main
-  defaults:
-    run:
-      working-directory: ./api
-  jobs:
-    coverage:
-      runs-on: ubuntu-latest
+on:
+  push:
+    branches:
+      - 'api/**'
+  pull_request:
+    branches:
+      - main
+defaults:
+  run:
+    working-directory: ./api
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Jest coverage report
-          uses: ArtiomTr/jest-coverage-report-action@v2.0.3
-          with:
-            working-directory: ./api
+    steps:
+      - name: Jest coverage report
+        uses: ArtiomTr/jest-coverage-report-action@v2.0.3
+        with:
+          working-directory: ./api
