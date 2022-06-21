@@ -9,7 +9,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
 
 ADD uploads.ini /usr/local/etc/php/conf.d/uploads.ini
 
-COPY web-portal /app
+COPY ./ /app
 WORKDIR /app
 
 RUN composer install
