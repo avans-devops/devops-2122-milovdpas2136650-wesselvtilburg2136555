@@ -1,5 +1,5 @@
 # For more information: https://laravel.com/docs/sail
-version: '3'
+version: '3.9'
 services:
     laravel:
         build:
@@ -31,8 +31,10 @@ services:
         volumes:
             - '.:/app'
         depends_on:
-            - mysql
-            - redis
+            mysql:
+                condition: service_healthy
+            redis:
+                condition: service_healthy
         networks:
             - sail
     mysql:
