@@ -38,7 +38,7 @@ RUN apt-get -y autoremove \
 
 RUN chmod +x ./wait-for-it.sh ./docker-entrypoint.sh
 
-ENTRYPOINT sh ["sh", "./wait-for-it.sh", "./docker-entrypoint.sh"]
+ENTRYPOINT ["sh", "./wait-for-it.sh", "./docker-entrypoint.sh"]
 
 CMD php artisan migrate --seed \
   & php artisan storage:link \
