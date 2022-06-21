@@ -3,7 +3,7 @@ version: '3'
 services:
     laravel:
         build:
-            context: .
+            context: ./
             dockerfile: Dockerfile
             args:
                 API_KEY: '${API_KEY}'
